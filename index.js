@@ -1,11 +1,24 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const UserModel = require("./models/userModel.js");
+
+import { port, datasource } from "./config/envvars.js";
+
+const PORT = port || 8005;
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.listen(8004, () => {
+mongoose.connect(datasource);
+
+app.get("/", req, (res) => {
+  UserModel.find()
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
+
+app.listen(PORT, () => {
   console.log("Server App and Running");
 });
