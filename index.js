@@ -13,11 +13,18 @@ app.use(express.json());
 
 mongoose.connect(datasource);
 
-app.get("/", req, (res) => {
+app.get("/getusers", (req, res) => {
   UserModel.find()
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
+
+app.post("/createuser", (req, res) => {
+  UserModel.create(req.body)
+  .then(user => res.json(user))
+  .catch(err => res.json(err))
+
+})
 
 app.listen(PORT, () => {
   console.log("Server App and Running");
