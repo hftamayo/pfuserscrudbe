@@ -2,8 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./models/userModel.js");
+const {port, datasource} = require("./config/envvars.js");
 
-import { port, datasource } from "./config/envvars.js";
+//import { port, datasource } from "./config/envvars.js";
 
 const PORT = port || 8005;
 
