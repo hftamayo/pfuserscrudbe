@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./models/userModel.js");
-const {port, datasource} = require("./config/envvars.js");
+const { port, datasource } = require("./config/envvars.js");
 
 //import { port, datasource } from "./config/envvars.js";
 
@@ -22,10 +22,24 @@ app.get("/getusers", (req, res) => {
 
 app.post("/createuser", (req, res) => {
   UserModel.create(req.body)
-  .then(user => res.json(user))
-  .catch(err => res.json(err))
+    .then((user) => res.json(user))
+    .catch((err) => res.json(err));
+});
 
-})
+app.put("/updateuser/:id", (req, res) => {
+  const id = req.params.id;
+  UserModel.findByIdAndUpdate(
+    { _id: id },
+    {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      age: req.body.age,
+    }
+  )
+    .then((user) => res.json(user))
+    .catch((err) => res.json(err));
+});
 
 app.listen(PORT, () => {
   console.log("Server App and Running");
