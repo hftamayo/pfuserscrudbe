@@ -41,6 +41,13 @@ app.put("/updateuser/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
+app.delete("/deleteuser/:id", (req, res) => {
+  const id = req.params.id;
+  UserModel.findByIdAndDelete({ _id: id })
+    .then((response) => res.json(response))
+    .catch((err) => res.json(err));
+});
+
 app.listen(PORT, () => {
   console.log("Server App and Running");
 });
