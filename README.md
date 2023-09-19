@@ -33,4 +33,5 @@ This is a fully functional DEMO of a CRUD built using Node.JS, it does not inclu
 Please refer to the Issues section in this repository
 
 ## References ##
-[Original Tutorial](https://youtu.be/FOK45_sEqK8?si=-gDlkKC2v_UGQL3q)
+* [Original Tutorial](https://youtu.be/FOK45_sEqK8?si=-gDlkKC2v_UGQL3q)
+* docker files: via ChatGPT with minimum adjusts
