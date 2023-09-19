@@ -7,7 +7,7 @@ RUN mkdir /opt/userscrud/be
 WORKDIR /opt/userscrud/be
 
 # Copy package.json and package-lock.json to the container
-COPY package*.json ./opt/userscrud/be
+COPY package.json ./
 
 # Install app dependencies
 RUN npm install
