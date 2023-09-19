@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  nodecrudusers:
+    container_name: nodecrudusers
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    networks:
+      - crudusersnetwork
+
+ networks:
+  crudusersnetwork:
