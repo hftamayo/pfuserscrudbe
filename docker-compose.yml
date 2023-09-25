@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nodecrudusers:
-    container_name: nodecrudusers
+    container_name: nodebackendusers
     build:
       context: ./
       dockerfile: Dockerfile
@@ -11,3 +11,4 @@ services:
 
 networks:
   crudusersnetwork:
+    external: true
