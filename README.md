@@ -29,6 +29,9 @@ This is a fully functional DEMO of a CRUD built using Node.JS, it does not inclu
 * Unstable: sourcecode that has not been tested and approved
 * Experimental: sourcecode in progress
 
+## Additional Technical Info ##
+* Before create the containers please run: docker network create crudusersnetwork 
+
 ## Bugs ##
 Please refer to the Issues section in this repository
 
