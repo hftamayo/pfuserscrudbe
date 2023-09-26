@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  nodecrudusers:
-    container_name: nodebackendusers
+  app:
+    container_name: nodecrudusers
     build:
       context: ./
       dockerfile: Dockerfile
