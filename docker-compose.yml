@@ -3,6 +3,7 @@ version: "3.8"
 services:
   app:
     container_name: nodecrudusers
+    restart: always
     build:
       context: ./
       dockerfile: Dockerfile
